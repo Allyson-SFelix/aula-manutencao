@@ -13,5 +13,5 @@ class UserTestCase(TestCase):
         response = self.client.get(reverse("home"))
         self.assertEqual(   
             response.json()["message"],
-            "Olá, Django!"
+            "Olá, Djanguinho!"
             )
