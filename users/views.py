@@ -2,6 +2,6 @@ from django.http import JsonResponse
 
 def home(request):
     return JsonResponse({
-        "message": "Olá, Django!",
+        "message": "Olá, Djanguinho!",
         "status": "ok"
         })
