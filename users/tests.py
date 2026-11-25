@@ -1,14 +1,17 @@
 from django.test import TestCase
-
+from django.urls import reverse
 # Create your tests here.
 
 
 class UserTestCase(TestCase):
     """ Test Case example """
-
-    def setUp(self) -> None:
-        self.name = "user_test_case"
-
-    def test_user(self):
-        """ test example """
-        self.assertEqual(1, 1)
+    def test_home_status_code(self):
+        response = self.client.get(reverse("home"))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_home_response(self):
+        response = self.client.get(reverse("home"))
+        self.assertEqual(   
+            response.json()["message"],
+            "Olá, Django!"
+            )
